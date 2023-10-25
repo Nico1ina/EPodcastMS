@@ -1,15 +1,18 @@
 package com.example.eurekapodcastserver.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "episodes")
 public class Episode extends Media {
 
+    @JsonBackReference
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "season_id")
     private Season season;
 
+    @JsonBackReference
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "podhost_id")
     private Podhost podhost;

@@ -1,5 +1,6 @@
 package com.example.eurekapodcastserver.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class Season {
     @Column(name = "release_date")
     private String releaseDate;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "season", cascade = CascadeType.ALL)
     private List<Episode> episodeList = new ArrayList<>();
 
