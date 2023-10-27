@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/podcast/api/v1/episodes")
+@RequestMapping("/api/v1/podcast")
 public class EpisodeController {
     @Autowired
     private EpisodeService episodeService;
